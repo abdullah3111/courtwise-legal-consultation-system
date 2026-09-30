@@ -1,0 +1,327 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 25, 2024 at 07:18 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `lawyers`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `role` enum('admin','customer','lawyer') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`) VALUES
+(15, 'Abdul Hye Nadeen', 'hyeabdul@gmail.com', '$2y$10$TZGkZwXAjjTZk5sFTTn.XubeHywbEa4RbAtaxVFeTYd9R8yPEGOU.', 'lawyer'),
+(16, 'Imdad Hussain Awan', 'imdadaw@gmail.com', '$2y$10$P7PJXI9arMOLPaozRvNexOo8Nog8ZiIDZQD1UYDvS4pba4mfnvAMK', 'lawyer'),
+(17, 'Inamullah Ansari', 'Inamullahansari@gmail.com', '$2y$10$xswuXSCQHiCOL1szLGjWyuKjhBLeVEuEhDi8hG2KG1jereoAoUiNu', 'lawyer'),
+(18, 'Muhammad Asif Malik', 'muhammadam@gmail.com', '$2y$10$IWVAWuNNH.6SaZLgPUZdU.ItgwdEbx4mOrx07MgbgQGIlSfUdDmIC', 'lawyer'),
+(19, '123', 'debbiehayes456123@outlook.com', '$2y$10$bqm/HVvQDaIoX/BpQDKjEutRfftjkwDuc1ClBt8dF.z1nUgMLje7i', 'lawyer'),
+(25, 'ali_khan', 'ali.khan@gmail.com', '$2y$10$neDFgFOy4Y3tgKTcIfGQEupcL2.lUdIAboiP/czT.4VIIGE4nCPQS', 'lawyer'),
+(26, 'sara_ahmed', 'sara.ahmed@example.com', '$2y$10$zUVX2PTB55vxHjZCbPApreIWhthANuYty8DRM.j.w3Jgruhwd12hW', 'lawyer'),
+(27, 'ahmed_ali', 'ahmed.ali@example.com', '$2y$10$Pr5qXVxVBV7.tIp2nf.deO0Ye9uG8zwT.Pesu1xPuEAJcHEI6cz06', 'lawyer'),
+(28, 'isha_pervaiz', 'isha.pervaiz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(29, 'hassan_ali', 'hassan.ali@gmail.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(30, 'maria_hassan', 'maria.hassan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(31, 'bilal_aslam', 'bilal.aslam@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(32, 'rabia_khan', 'rabia.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(33, 'kashif_hanif', 'kashif.hanif@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(34, 'zainab_rauf', 'zainab.rauf@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(35, 'asim_akram', 'asim.akram@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(36, 'hina_khan', 'hina.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(76, 'faiza.malik', 'faiza.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(77, 'adnan.tariq', 'adnan.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(78, 'saba.jamil', 'saba.jamil@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(79, 'noman.sheikh', 'noman.sheikh@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(80, 'zainab.rauf', 'zainab.rauf@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(81, 'hassan.raza', 'hassan.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(82, 'ayesha.khalid', 'ayesha.khalid@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(83, 'arsalan.bashir', 'arsalan.bashir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(84, 'mariam.khan', 'mariam.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(85, 'umair.ahmed', 'umair.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(86, 'sana.javed', 'sana.javed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(87, 'imran.qureshi', 'imran.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(88, 'ali.raza', 'ali.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(89, 'sarah.tariq', 'sarah.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(90, 'hiba.saeed', 'hiba.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(91, 'owais.khan', 'owais.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(92, 'uzma.malik', 'uzma.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(93, 'faisal.khan', 'faisal.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(94, 'rida.tariq', 'rida.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(95, 'shahid.qureshi', 'shahid.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(96, 'sami.javed', 'sami.javed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(97, 'mehwish.iqbal', 'mehwish.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(98, 'ahmad.raza', 'ahmad.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(99, 'nadia.ahmed', 'nadia.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(100, 'waleed.aslam', 'waleed.aslam@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(101, 'kiran.riaz', 'kiran.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(102, 'hammad.malik', 'hammad.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(103, 'anam.sheikh', 'anam.sheikh@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(104, 'saad.ahmed', 'saad.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(105, 'zainab.fatima', 'zainab.fatima@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(106, 'faraz.khan', 'faraz.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(107, 'nazia.tariq', 'nazia.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(108, 'naveed.anwar', 'naveed.anwar@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(109, 'asma.tariq', 'asma.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(110, 'raza.malik', 'raza.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(111, 'tariq.hussain', 'tariq.hussain@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(112, 'mahrukh.saeed', 'mahrukh.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(113, 'hamza.rafiq', 'hamza.rafiq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(114, 'lubna.iqbal', 'lubna.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(115, 'ahmed.sheikh', 'ahmed.sheikh@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(116, 'rafay.khan', 'rafay.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(117, 'sumaira.malik', 'sumaira.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(118, 'nabeel.riaz', 'nabeel.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(119, 'huma.tariq', 'huma.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(120, 'yasir.khan', 'yasir.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(121, 'rania.ahmed', 'rania.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(122, 'sohail.tariq', 'sohail.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(123, 'hina.malik', 'hina.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(124, 'Adil Khan', 'adil.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(125, 'Sadaf Ali', 'sadaf.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(126, 'Nabeel Tariq', 'nabeel.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(127, 'Kiran Ahmed', 'kiran.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(128, 'Marium Raza', 'marium.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(129, 'Shahid Malik', 'shahid.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(130, 'Rukhsar Fatima', 'rukhsar.fatima@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(131, 'Adeel Bashir', 'adeel.bashir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(132, 'Farhan Asif', 'farhan.asif@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(133, 'Iqra Javed', 'iqra.javed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(134, 'Noman Saeed', 'noman.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(135, 'Saira Tariq', 'saira.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(136, 'Osman Qureshi', 'osman.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(137, 'Amna Shah', 'amna.shah@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(138, 'Fahad Ahmed', 'fahad.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(139, 'Nida Malik', 'nida.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(140, 'Shahbaz Khan', 'shahbaz.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(141, 'Faisal Malik', 'faisal.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(142, 'Hina Tariq', 'hina.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(143, 'Zeeshan Ahmed', 'zeeshan.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(144, 'Aisha Malik', 'aisha.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(145, 'Fawad Jamil', 'fawad.jamil@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(146, 'Nimra Khan', 'nimra.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(147, 'Sohail Tariq', 'sohail.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(148, 'Waqar Ali', 'waqar.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(149, 'Anam Fatima', 'anam.fatima@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(150, 'Ali Qureshi', 'ali.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(151, 'Lubna Tariq', 'lubna.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(152, 'Hassan Shah', 'hassan.shah@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(153, 'Rida Ahmed', 'rida.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(154, 'Adnan Saeed', 'adnan.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(155, 'Maria Khan', 'maria.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(156, 'Ahmad Raza', 'ahmad.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(157, 'Faiza Malik', 'faiza.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(158, 'Usman Tariq', 'usman.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(159, 'Sami Ahmed', 'sami.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(160, 'Nazia Tariq', 'nazia.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(161, 'Raza Malik', 'raza.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(162, 'Sarah Javed', 'sarah.javed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(163, 'Ali Saeed', 'ali.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(164, 'Hiba Rafiq', 'hiba.rafiq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(165, 'Tariq Khan', 'tariq.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(166, 'Rania Malik', 'rania.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(167, 'Asif Ahmed', 'asif.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(168, 'Sana Ahmed', 'sana.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(169, 'Noman Malik', 'noman.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(170, 'Ayesha Khan', 'ayesha.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(171, 'Zafar Iqbal', 'zafar.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(236, 'hamza.malik', 'hamza.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(237, 'ali.nawaz', 'ali.nawaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(238, 'aqsa.raza', 'aqsa.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(239, 'raza.khan', 'raza.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(240, 'hina.malik01', 'hina.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(241, 'sana.tariq', 'sana.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(242, 'adeel.ahmed', 'adeel.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(243, 'kashif.aslam', 'kashif.aslam@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(244, 'nida.asghar', 'nida.asghar@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(245, 'saad.qureshi', 'saad.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(246, 'anam.ali', 'anam.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(247, 'tariq.hussain01', 'tariq.hussain@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(248, 'sohail.iqbal', 'sohail.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(249, 'rabia.ahmed', 'rabia.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(250, 'zain.raza', 'zain.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(251, 'iqra.malik', 'iqra.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(252, 'farhan.ali', 'farhan.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(253, 'saima.tariq', 'saima.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(254, 'nabeel.qasim', 'nabeel.qasim@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(255, 'ayesha.khan', 'ayesha.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(256, 'zafar.malik', 'zafar.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(257, 'hiba.aslam', 'hiba.aslam@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(258, 'omer.farooq', 'omer.farooq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(259, 'maham.iqbal', 'maham.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(260, 'anwar.javed', 'anwar.javed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(261, 'sadaf.tariq', 'sadaf.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(262, 'amir.saeed', 'amir.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(263, 'lubna.riaz', 'lubna.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(264, 'usama.tariq', 'usama.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(265, 'saira.ahmed', 'saira.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(266, 'ahmed.qureshi', 'ahmed.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(267, 'razia.fatima', 'razia.fatima@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(268, 'omer.malik', 'omer.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(269, 'aiman.tariq', 'aiman.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(270, 'farooq.ahmed', 'farooq.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(271, 'hassan.nawaz', 'hassan.nawaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(272, 'areeba.saeed', 'areeba.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(273, 'bilal.qadir', 'bilal.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(274, 'madiha.khan', 'madiha.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(275, 'shahid.malik', 'shahid.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(276, 'nimra.ahmed', 'nimra.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(277, 'imran.farooq', 'imran.farooq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(278, 'khalid.saeed', 'khalid.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(279, 'nazia.qureshi', 'nazia.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(280, 'zahid.malik', 'zahid.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(281, 'maria.ahmed', 'maria.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(282, 'kamran.tariq', 'kamran.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(283, 'anam.iqbal', 'anam.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(300, 'rashid.akram', 'rashid.akram@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(301, 'ahsan.tariq', 'ahsan.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(302, 'ayesha.malik', 'ayesha.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(303, 'imran.qadir', 'imran.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(304, 'sadia.iqbal', 'sadia.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(305, 'hamza.tariq', 'hamza.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(306, 'rida.khan', 'rida.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(307, 'hassan.malik', 'hassan.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(308, 'zainab.saeed', 'zainab.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(309, 'nabeel.riaz01', 'nabeel.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(310, 'sahar.ahmed', 'sahar.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(311, 'tariq.qureshi', 'tariq.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(312, 'mubashir.khan', 'mubashir.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(313, 'amna.tariq', 'amna.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(314, 'kamran.ahmed', 'kamran.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(315, 'hiba.qadir', 'hiba.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(332, 'yasir.malik', 'yasir.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(333, 'saad.khan', 'saad.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(334, 'sana.ahmed', 'sana.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(335, 'zain.riaz', 'zain.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(336, 'areeba.qureshi', 'areeba.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(337, 'ibrahim.qadir', 'ibrahim.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(338, 'fahima.tariq', 'fahima.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(339, 'waleed.ahmed', 'waleed.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(340, 'ayesha.khan01', 'ayesha.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(341, 'faraz.riaz', 'faraz.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(342, 'lubna.malik', 'lubna.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(343, 'nadeem.qazi', 'nadeem.qazi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(344, 'imran.tariq', 'imran.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(345, 'uzma.riaz', 'uzma.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(346, 'kashif.malik', 'kashif.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(347, 'fatima.qadir', 'fatima.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(492, 'sajid.ali', 'sajid.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(493, 'nida.raza', 'nida.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(494, 'rehan.tariq', 'rehan.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(495, 'ayesha.zafar', 'ayesha.zafar@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(496, 'hina.saeed', 'hina.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(497, 'faisal.malik', 'faisal.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(498, 'rohail.riaz', 'rohail.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(499, 'sadia.tariq', 'sadia.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(500, 'rashid.qadir', 'rashid.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(501, 'imran.saeed', 'imran.saeed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(502, 'sara.ali', 'sara.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(503, 'zainab.khan', 'zainab.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(504, 'muneeb.raza', 'muneeb.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(505, 'anum.tariq', 'anum.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(506, 'shahnaz.ali', 'shahnaz.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(507, 'zain.qadir', 'zain.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(508, 'omar.malik', 'omar.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(509, 'noreen.iqbal', 'noreen.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(510, 'fahad.tariq', 'fahad.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(511, 'adeel.ali', 'adeel.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(512, 'ahsan.riaz', 'ahsan.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(513, 'zeenat.iqbal', 'zeenat.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(514, 'amina.malik', 'amina.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(515, 'jameel.qadir', 'jameel.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(516, 'shazia.ahmed', 'shazia.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(517, 'feroze.khan', 'feroze.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(518, 'khalid.tariq', 'khalid.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(519, 'reema.qureshi', 'reema.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(520, 'kashif.zafar', 'kashif.zafar@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(521, 'hassan.iqbal', 'hassan.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(522, 'amina.khan', 'amina.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(523, 'shoaib.riaz', 'shoaib.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(524, 'waseem.akram', 'waseem.akram@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(525, 'muzammil.tariq', 'muzammil.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(526, 'kashif.ali', 'kashif.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(527, 'sami.khan', 'sami.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(528, 'amna.tariq01', 'amna.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(529, 'hassan.ali', 'hassan.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(530, 'nazira.riaz', 'nazira.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(531, 'kiran.khan', 'kiran.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(532, 'sana.iqbal', 'sana.iqbal@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(533, 'kashan.tariq', 'kashan.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(534, 'maya.qadir', 'maya.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(535, 'bilal.malik', 'bilal.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(536, 'omar.qureshi', 'omar.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(537, 'ayesha.zafar01', 'ayesha.zafar@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(538, 'tariq.akram', 'tariq.akram@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(539, 'fariha.riaz', 'fariha.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(540, 'fahad.ali', 'fahad.ali@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(541, 'nida.malik', 'nida.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(542, 'omar.aslam', 'omar.aslam@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(543, 'iqbal.riaz', 'iqbal.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(544, 'mariam.qureshi', 'mariam.qureshi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(545, 'ahmed.raza', 'ahmed.raza@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(546, 'sara.qadir', 'sara.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(547, 'farhan.malik', 'farhan.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(548, 'arif.khan', 'arif.khan@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(549, 'kiran.tariq', 'kiran.tariq@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(550, 'usman.ahmed', 'usman.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(551, 'rabia.qadir', 'rabia.qadir@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(552, 'hassan.qazi', 'hassan.qazi@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(553, 'nimra.malik', 'nimra.malik@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(554, 'fiza.riaz', 'fiza.riaz@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(555, 'zahid.ahmed', 'zahid.ahmed@example.com', '$2y$10$NKxaONJwMvbz/U7lYpystO.GqN5KYlTqU31KM/qReFDr1o9Uy.4PS', 'lawyer'),
+(556, 'siddiqui', 'siddiquiab31@gmail.com', '$2y$10$bCaxPr68N5/.iC7FTxjRtuvXdErg5YOZUxI2fguOLNhkS43rHU5ZW', 'customer'),
+(557, 'admin', 'admin@gmail.com', '$2y$10$gigvZKWD3nKyzLK/nuP49uU8RELRsfwoEwPu9UsJmDXkqsWRn9bHS', 'admin');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=558;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
